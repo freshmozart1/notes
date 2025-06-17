@@ -1,0 +1,104 @@
+* {
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100svw;
+    background-color: #f4f4f4;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 24px;
+}
+
+li {
+    list-style-type: none;
+}
+
+header>menu {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 16px;
+    margin: 0;
+    width: 100%;
+}
+
+header>menu>li>button {
+    all: unset;
+    font-size: 24px;
+    padding: 12px 16px;
+    border: 2px solid #dbdb15;
+    border-radius: 12px;
+    background-color: rgb(223, 234, 98);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 24px;
+}
+
+main>section.note>form {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: max-content;
+    min-height: 300px;
+    min-width: 300px;
+    position: relative;
+}
+
+main>section.note>form>button.remove {
+    all: unset;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #7b7b1f;
+}
+
+main>section.note>form>input.note-title {
+    width: 100%;
+    line-height: 1rem;
+    text-align: center;
+    background-color: rgb(223, 234, 98);
+    padding: 12px 16px 0 16px;
+    border: 1px solid rgb(219, 219, 21);
+    border-radius: 4px 4px 0 0;
+    height: 48px;
+    flex: 0 0 48px;
+}
+
+main>section.note>form>textarea.note-content {
+    width: 100%;
+    min-height: 252px;
+    min-width: 300px;
+    line-height: 1.1rem;
+    padding: 12px 16px;
+    background-color: rgb(223, 234, 98);
+    border: 1px solid rgb(219, 219, 21);
+    border-radius: 0 0 4px 4px;
+    resize: none;
+    font-family: inherit;
+    flex: 1 1 auto;
+    transform: skewX(-0.01turn);
+    transform-origin: top left;
+    overflow: hidden;
+    resize: both;
+    text-align: left;
+    box-shadow: 3px 20px 20px rgba(0, 0, 0, .1);
+}
