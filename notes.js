@@ -1,5 +1,7 @@
+/**
+ * @type {{[noteId: string]: {title: string, note: string}}}
+ */
 const notes = JSON.parse(localStorage.getItem('notes') || '{}');
-
 
 document.addEventListener('DOMContentLoaded', () => {
     Object.entries(notes).forEach(([id, note]) => drawNote(note, id));
@@ -7,6 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /**
  * This function stores a new note in localStorage and draws it on the page.
+ * @returns {void}
  */
 function addNote() {
     const id = `note_${Date.now()}`;
@@ -20,6 +23,7 @@ function addNote() {
  * This function draws a note on the page.
  * @param {{title: string, note: string}} note The note object containing title and content.
  * @param {string} id The unique identifier for the note.
+ * @returns {void}
  */
 function drawNote(note, id) {
     const main = document.querySelector('main');
@@ -71,6 +75,12 @@ function drawNote(note, id) {
     main.appendChild(section);
 }
 
+/**
+ * This function updates a note in local storage.
+ * @param {{title: string, note: string}} note The note object containing title and content.
+ * @param {string} id The unique identifier for the note.
+ * @returns {void}
+ */
 function updateLocalStorage(note, id) {
     notes[id] = note;
     localStorage.setItem('notes', JSON.stringify(notes));
