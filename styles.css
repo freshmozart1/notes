@@ -33,6 +33,10 @@ button {
     cursor: pointer;
 }
 
+header {
+    padding: 50px 100px;
+}
+
 footer {
     position: fixed;
     bottom: 0;
