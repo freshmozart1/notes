@@ -6,14 +6,28 @@
 }
 
 body {
+    --note-color: rgb(223, 234, 98);
+    --note-border-color: rgb(219, 219, 21);
+    --note-border: 1px solid var(--note-border-color);
+    --note-border-radius: 4px 4px;
+    --title-height: 48px;
+    --note-min-size: 300px;
+    --text-color: #7b7b1f;
     width: 100svw;
     background-color: #f4f4f4;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     padding: 24px;
+    color: var(--text-color);
 }
 
 li {
     list-style-type: none;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+    background-color: rgb(223, 234, 98);
 }
 
 header>menu {
@@ -27,19 +41,13 @@ header>menu {
 }
 
 header>menu>li>button {
-    all: unset;
-    font-size: 24px;
     padding: 12px 16px;
-    border: 2px solid #dbdb15;
+    border: 2px solid var(--note-border-color);
     border-radius: 12px;
-    background-color: rgb(223, 234, 98);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    cursor: pointer;
 }
 
 main {
-    display: flex;
-    flex-direction: row;
     align-items: center;
     justify-content: start;
     flex-wrap: wrap;
@@ -48,50 +56,53 @@ main {
 }
 
 main>section.note>form {
-    display: flex;
     flex-direction: column;
     justify-content: start;
     width: max-content;
-    min-height: 300px;
-    min-width: 300px;
+    min-height: var(--note-min-size);
+    min-width: var(--note-min-size);
     position: relative;
 }
 
 main>section.note>form>button.remove {
-    all: unset;
-    cursor: pointer;
     position: absolute;
     top: 0;
     right: 0;
-    width: 48px;
-    height: 48px;
-    display: flex;
+    width: var(--title-height);
+    height: var(--title-height);
     align-items: center;
     justify-content: center;
-    color: #7b7b1f;
+}
+
+main,
+main>section.note,
+main>section.note>form,
+main>section.note>form>button.remove {
+    display: flex;
 }
 
 main>section.note>form>input.note-title {
     width: 100%;
     line-height: 1rem;
     text-align: center;
-    background-color: rgb(223, 234, 98);
+    background-color: var(--note-color);
     padding: 12px 16px 0 16px;
-    border: 1px solid rgb(219, 219, 21);
-    border-radius: 4px 4px 0 0;
-    height: 48px;
-    flex: 0 0 48px;
+    border: var(--note-border);
+    border-radius: var(--note-border-radius) 0 0;
+    height: var(--title-height);
+    flex: 0 0 var(--title-height);
+    color: var(--text-color);
 }
 
 main>section.note>form>textarea.note-content {
     width: 100%;
-    min-height: 252px;
-    min-width: 300px;
+    min-height: calc(var(--note-min-size) - var(--title-height));
+    min-width: var(--note-min-size);
     line-height: 1.1rem;
     padding: 12px 16px;
-    background-color: rgb(223, 234, 98);
-    border: 1px solid rgb(219, 219, 21);
-    border-radius: 0 0 4px 4px;
+    background-color: var(--note-color);
+    border: var(--note-border);
+    border-radius: 0 0 var(--note-border-radius);
     resize: none;
     font-family: inherit;
     flex: 1 1 auto;
@@ -101,4 +112,5 @@ main>section.note>form>textarea.note-content {
     resize: both;
     text-align: left;
     box-shadow: 3px 20px 20px rgba(0, 0, 0, .1);
+    color: var(--text-color);
 }
